@@ -153,6 +153,12 @@ class SslRequirementTest < ActionController::TestCase
     SslRequirement.disable_ssl_check = false
   end
   
+  def test_exclude_host
+    SslRequirement.exclude_host = ['test.host']
+    @request.env['HTTPS'] = "on"
+    get :d
+    assert_response :success
+  end
 end
 
 class SslAllActionsTest < ActionController::TestCase
