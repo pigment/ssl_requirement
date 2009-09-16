@@ -92,7 +92,7 @@ class SslAllActionsController < ActionController::Base
   
 end
 
-class SslRequirementTest < Test::Unit::TestCase
+class SslRequirementTest < ActionController::TestCase
   def setup
     @controller = SslRequirementController.new
     @request    = ActionController::TestRequest.new
