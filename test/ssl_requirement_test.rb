@@ -97,6 +97,7 @@ class SslRequirementTest < ActionController::TestCase
     @controller = SslRequirementController.new
     @request    = ActionController::TestRequest.new
     @response   = ActionController::TestResponse.new
+    SslRequirement.exclude_host = []
   end
   
   def test_redirect_to_https_preserves_flash
